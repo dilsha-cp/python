@@ -1,26 +1,20 @@
-thislist=['apple','orange','mango']
-print(thislist[0])
-# to add item according to index
-thislist[0]='pineapple'
-print(thislist)
-# to add at end of list
-thislist.append('grape')
-print(thislist)
-# insert element at index position
-thislist.insert(1,'banana')
-print(thislist)
-# negative index
-print(thislist[-1])
-# to remove elemnt
-thislist.remove('grape')
-print(thislist)
-# to remove element using index
-thislist.pop(1)
-print(thislist)
-# remove last element
-thislist.pop()
-print(thislist)
-# to compain two list
-list1=['abey','dilsha']
-thislist.extend(list1)
-print(thislist)
+name = 'dilsha'
+print(name[2])
+# name[3]='a'
+# print(name) like this we cant replace anything in string for this we use list (immutative)
+# LIST
+values = ['python', 'c', 'c++']
+values[2] = 'laravel'
+# mutative
+print(values)
+print(values[-2:])
+print(values[0:1])
+print(values[0:2])
+values = values + ['php']
+print(values)
+# to add a value at end of list use append key word
+values.append('html')
+print(values)
+# to add a value at end of the list from user
+values.append(input('enter a value in list:'))
+print(values)
