@@ -1,45 +1,44 @@
-mydic2={'student1':{
-    "name":"dilsha",
-    "age":23,
-    'mark':{
-        'maths':128,
-        'eng':124
+# Duplicates Not Allowed
 
-
-    }
-},
-'student2':{
-    "name":"abey",
-    "age":24,
-    'mark':{
-        'maths':130,
-        'eng':126
-    }
+student = {
+    "name": "dilsha",
+    "age": 23,
+    "dep": "Mca"
 }
-} 
-# To print all item
-print(mydic2)
-# To get student1
-print(mydic2['student1'])
-# To get student2
-print(mydic2.get('student2'))
-# To get mark of student1
-print(mydic2.get('student1').get('mark'))
-# length of dictionary
-print(len(mydic2))
-# To update mark of student1
-mydic2.get('student1').get('mark').update({'eng':150})
-print(mydic2['student1'])
-# To add 
-mydic2=({'student3':{
-    "name":"abhi",
-    'age':23,
-    'mark':{
-        'maths':128,
-        'eng':124
-    }
-}})
-print(mydic2.get('student3'))
-print(mydic2)
+print(student)
+# To get individual value use get method two method
+print(student.get("name"))
+print(student["dep"])
+# to print length of dictionary
+print(len(student))
+# to print type of dictionary
+print(type(student))
+# another way of creating dictionary
+thisdict = dict(name="John", age=36, country="Norway")
+print(thisdict)
+# to change the value
+car = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
+}
 
+x = car.keys()
+y = car.values()
 
+print(x)  # before the change
+print(y)
+# To add new value
+car["color"] = "white"
+
+print(x)  # after the change
+print(y)
+# To update the value
+car.update({"year": 2018})
+print(car)
+# To remove item from dictionary
+car.pop("model")
+print(car)
+# To clear entire item from dictionary
+car.clear()
+print(car)  # output:{}
