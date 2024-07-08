@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Operations Form</title>
+</head>
+<body>
+    <h1>CRUD Operations with MySQL</h1>
+    <form action="crud.py" method="post">
+        <label for="action">Action:</label>
+        <select id="action" name="action">
+            <option value="create">Create</option>
+            <option value="read">Read</option>
+            <option value="update">Update</option>
+            <option value="delete">Delete</option>
+        </select><br><br>
+        
+        <label for="id">ID (for Update/Delete):</label>
+        <input type="text" id="id" name="id"><br><br>
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age"><br><br>
+        
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender"><br><br>
+        
+        <label for="salary">Salary:</label>
+        <input type="text" id="salary" name="salary"><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
