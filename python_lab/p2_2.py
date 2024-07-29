@@ -1,43 +1,33 @@
 import sqlite3
 from sqlite3 import Error
-
 def connect_to_sqlite(db_file):
-    """ Create a database connection to an SQLite database """
-    conn = None
+    #to create a database connection
+    conn=None
     try:
-        conn = sqlite3.connect(db_file)
-        print(f"Connected to SQLite, SQLite version: {sqlite3.version}")
-
-        # Create a new SQLite cursor
-        cursor = conn.cursor()
-        
-        # Create a table (if it doesn't already exist)
-        cursor.execute('''CREATE TABLE IF NOT EXISTS users (
-                            id INTEGER PRIMARY KEY,
-                            name TEXT NOT NULL
-                          );''')
-
-        # Insert a new row into the users table
-        cursor.execute("INSERT INTO users (name) VALUES ('John Doe');")
-
-        # Commit the transaction
+        conn=sqlite3.connect(db_file)
+        print(f"connect to sqlite,sqlite version{sqlite3.version}")
+        #to create a new sqlite cursor
+        cursor=conn.cursor()
+        #to create a table
+        cursor.execute('''CREATE  TABLE IF NOT EXISTS user(
+                       id INTEGER PRIMARY KEY,
+                       name TEXT NOT NULL);''')
+        #to insert  a new row
+        cursor.execute("INSERT INTO user(name)Values('dilsha')")
+        #commit the transaction
         conn.commit()
-
-        # Query all rows in the users table
-        cursor.execute("SELECT * FROM users;")
-        rows = cursor.fetchall()
-
-        print("Data from the users table:")
+        #to get row from table
+        cursor.execute("SELECT * FROM user;")
+        rows=cursor.fetchall()
+        print("Data from the user table:")
         for row in rows:
             print(row)
-
     except Error as e:
-        print(f"Error connecting to SQLite: {e}")
+        print(f"Error: {e}")
     finally:
         if conn:
             conn.close()
-            print("SQLite connection is closed")
-
-if __name__ == "__main__":
-    db_path = "test_database.db"  # Specify the database file path
-    connect_to_sqlite(db_path)
+            print("sqlite connection is closed")
+if __name__=="__main__":
+    db_path="test_database.db"
+    connect_to_sqlite(db_path)        
